@@ -21,10 +21,6 @@ const PokemonCard: FunctionComponent<Props> = ({pokemon, borderColor = '1px,soli
         setColor('#f5f5f5');
     }
 
-    
-
-    
-
   return (
     <div className="col s6 m4" onMouseEnter={showBorder} onMouseLeave={hideBorder}>
       <div className="card horizontal" style={{borderColor: color}}>
