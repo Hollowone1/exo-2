@@ -1,10 +1,17 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import PokemonCard from '../components/pokemon-card';
 import usePokemons from '../hooks/pokemon.hook';
+import setPokemons from './pokemon-edit';
+import PokemonService from '../services/pokemon-services';
   
 const PokemonList: FunctionComponent = () => {
   const pokemons = usePokemons();
+
+  useEffect(()=>{
+   PokemonService.getPokemons().then(pokemons => setPokemons(pokemons));
+  }, []);
   
+
   return (
     <div>
       <h1 className="center">Pokédex</h1>
